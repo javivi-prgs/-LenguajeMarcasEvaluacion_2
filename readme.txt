@@ -20,3 +20,11 @@ Para verticales: portrait
 
 MODO OSCURO
 @media (prefers-color-scheme: dark){}
+
+Si mi dispositivo es tactil: En general, moviles no tienen hover. Para identificar que el navegador funciona por puntero. 
+@media (pointer:fine) or (hover:hover){}
+
+
+@media = un if de java :)
+
+FIN
