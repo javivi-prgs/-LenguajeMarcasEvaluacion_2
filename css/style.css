@@ -688,7 +688,7 @@ footer {
 @media (max-width: 768px) {
     .gallery-grid {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 2fr) !important;
         gap: 15px !important;
         padding-left: 10px !important;
         padding-right: 10px !important;
@@ -856,4 +856,21 @@ footer {
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto 2rem;
+}
+
+/* --- Responsive Styles (Requested Dimensions) --- */
+
+/* Moviles Pequeños (0 - 480px) */
+@media (max-width: 480px) {
+    
+}
+
+/* Moviles Medianos (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+    
+}
+
+/* Moviles Grandes (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    /* Estilos para pantallas grandes / tablets aqui */
 }
