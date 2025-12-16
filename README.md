@@ -27,24 +27,4 @@ Si mi dispositivo es tactil: En general, moviles no tienen hover. Para identific
 
 @media = un if de java :)
 
-display: flex;
-hay q entender qn es caja qn es 
-
-todo elemento html puede utilizar display flex
-todo elemento puede ser caja
-y las cajas pueden tener dentro mas cajas que pueden tener display flex
-toda caja puede tener item
-todo item esta dentro de una caja
-
-floxbox froggy
-
-maximo 4 elementos por caja
-
-tendecias
-logo izquierda,centro
-menus centro derecha
-
-gap: hace un margin de 20 px pero usando flex.
-
-
 FIN
