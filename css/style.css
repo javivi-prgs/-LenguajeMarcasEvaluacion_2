@@ -702,7 +702,7 @@ footer {
 @media (max-width: 768px) {
     .gallery-grid {
         display: grid !important;
-        grid-template-columns: repeat(2, 2fr) !important;
+        grid-template-columns: repeat(2, 4fr) !important;
         gap: 15px !important;
         padding-left: 10px !important;
         padding-right: 10px !important;
@@ -986,7 +986,7 @@ footer {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 2fr) !important;
         gap: 10px !important;
     }
 
@@ -1037,7 +1037,7 @@ footer {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 2fr) !important;
     }
 
     /* Portrait: Tablets/Large Phones */
