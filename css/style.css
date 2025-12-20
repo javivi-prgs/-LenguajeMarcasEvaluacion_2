@@ -666,6 +666,14 @@ footer {
 
     /* Carousel handles responsiveness naturally now */
     /* Removed legacy Grid overrides */
+
+    .phone-placeholder {
+        width: 320px;
+        /* Increased from 280px */
+        height: auto;
+        aspect-ratio: 9/21;
+        /* Even taller aspect ratio (was 9/19) */
+    }
 }
 
 /* Carousel handles responsiveness naturally now */
@@ -678,7 +686,8 @@ footer {
 .section-title {
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+    /* Reduced from 3rem to decrease separation */
     color: var(--text-white);
 }
 
@@ -753,7 +762,7 @@ footer {
 .carousel-mask {
     width: 100%;
     max-width: 350px;
-    /* Size of one phone mockup */
+    /* Adjusted back to 350px for smaller phone */
     overflow: hidden;
     position: relative;
     /* Optional: Add some padding if shadow cut-off happens, or handle in slide */
@@ -782,14 +791,15 @@ footer {
 
 
 .phone-placeholder {
-    width: 240px;
-    height: 420px;
-    background: #000;
+    width: 300px;
+    /* Reduced to 300px as requested for large devices */
+    height: auto;
+    aspect-ratio: 9/16;
+    /* background: #000; Removed as requested */
     border-radius: 35px;
     border: 8px solid #2a2a2a;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
 }
 
@@ -797,22 +807,12 @@ footer {
     transform: scale(1.02);
 }
 
-.notch {
-    width: 50%;
-    height: 25px;
-    background: #2a2a2a;
-    position: absolute;
-    top: 0;
-    left: 25%;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    z-index: 10;
-}
+
 
 .screen-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1E1E1E 0%, #121212 100%);
+    /* background: linear-gradient(135deg, #1E1E1E 0%, #121212 100%); Removed as requested */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -824,7 +824,8 @@ footer {
 .screen-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
+    /* Forces full image to be seen with no empty space (may stretch) */
 }
 
 /* Premium Section */
