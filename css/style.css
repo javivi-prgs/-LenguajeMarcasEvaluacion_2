@@ -664,440 +664,412 @@ footer {
         margin: 0 auto;
     }
 
-    /* Gallery Mobile Fix: 2 columns, smaller phones */
-    .gallery-grid {
-        display: grid;
-        /* Switch to grid for easy 2-col */
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        /* Tighter gap */
-        padding: 0 10px;
+    /* Carousel handles responsiveness naturally now */
+    /* Removed legacy Grid overrides */
+
+    /* Carousel handles responsiveness naturally now */
+
+
+
+    /* --- New Sections Styles --- */
+
+    /* Section Titles */
+    .section-title {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+        color: var(--text-white);
     }
 
-    .phone-placeholder {
-        width: 100%;
-        /* Fill the grid cell */
-        height: auto;
-        /* Auto height based on aspect ratio */
-        aspect-ratio: 9/19;
-        /* Maintain modern phone ratio */
-        border-width: 4px;
-        /* Thinner border */
+    /* How It Works */
+    .how-it-works {
+        padding: 100px 5%;
+        background: var(--bg-dark);
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .step-card {
+        background: var(--bg-card);
+        padding: 40px;
         border-radius: 20px;
-        /* Smaller radius */
+        text-align: center;
+        transition: transform 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .step-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary);
+    }
+
+    .step-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--primary);
+        color: var(--bg-dark);
+        font-size: 1.5rem;
+        font-weight: 900;
+        line-height: 60px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+
+    .step-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .step-card p {
+        color: var(--text-gray);
+    }
+
+    /* Gallery / Placeholders */
+    .gallery {
+        padding: 100px 5%;
+        background: #151515;
+        text-align: center;
+    }
+
+    .carousel-container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .carousel-mask {
+        width: 100%;
+        max-width: 350px;
+        /* Size of one phone mockup */
+        overflow: hidden;
+        position: relative;
+        /* Optional: Add some padding if shadow cut-off happens, or handle in slide */
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    /* Ensure phone placeholder fits nicely */
+    .carousel-slide .phone-placeholder {
+        width: 100%;
+        margin: 0;
+    }
+
+
+
+    .phone-placeholder {
+        width: 240px;
+        height: 420px;
+        background: #000;
+        border-radius: 35px;
+        border: 8px solid #2a2a2a;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s;
+    }
+
+    .phone-placeholder:hover {
+        transform: scale(1.02);
     }
 
     .notch {
-        height: 15px;
-        /* Smaller notch */
+        width: 50%;
+        height: 25px;
+        background: #2a2a2a;
+        position: absolute;
+        top: 0;
+        left: 25%;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        z-index: 10;
     }
 
-    .screen-placeholder span {
-        font-size: 0.7rem;
-        /* Smaller text */
-    }
-}
-
-/* Force override for Gallery Responsiveness */
-@media (max-width: 768px) {
-    .gallery-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 2fr) !important;
-        gap: 15px !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    .phone-placeholder {
-        width: 100% !important;
-        max-width: none !important;
-        height: auto !important;
-        aspect-ratio: 9/19 !important;
-        margin: 0 !important;
-    }
-
-    /* Ensure they don't disappear */
-    .gallery {
-        overflow: visible !important;
-    }
-}
-
-
-
-/* --- New Sections Styles --- */
-
-/* Section Titles */
-.section-title {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    color: var(--text-white);
-}
-
-/* How It Works */
-.how-it-works {
-    padding: 100px 5%;
-    background: var(--bg-dark);
-}
-
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.step-card {
-    background: var(--bg-card);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    transition: transform 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.step-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary);
-}
-
-.step-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--primary);
-    color: var(--bg-dark);
-    font-size: 1.5rem;
-    font-weight: 900;
-    line-height: 60px;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-}
-
-.step-card h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.step-card p {
-    color: var(--text-gray);
-}
-
-/* Gallery / Placeholders */
-.gallery {
-    padding: 100px 5%;
-    background: #151515;
-    text-align: center;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, min-content);
-    justify-content: center;
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.phone-placeholder {
-    width: 280px;
-    height: 580px;
-    background: #000;
-    border-radius: 35px;
-    border: 8px solid #2a2a2a;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-}
-
-.phone-placeholder:hover {
-    transform: scale(1.02);
-}
-
-.notch {
-    width: 50%;
-    height: 25px;
-    background: #2a2a2a;
-    position: absolute;
-    top: 0;
-    left: 25%;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    z-index: 10;
-}
-
-.screen-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1E1E1E 0%, #121212 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-gray);
-    font-size: 1.2rem;
-    border: 1px dashed rgba(255, 255, 255, 0.1);
-}
-
-.screen-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Premium Section */
-.premium-promo {
-    padding: 80px 5%;
-    background: linear-gradient(90deg, #121212 0%, #2a2200 50%, #121212 100%);
-    text-align: center;
-    border-top: 1px solid rgba(255, 215, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-}
-
-.premium-content h2 {
-    color: var(--primary);
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-}
-
-.premium-content p {
-    color: white;
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-}
-
-/* --- Responsive Styles (Requested Dimensions) --- */
-
-/* Moviles Pequeños (0 - 480px) */
-@media (max-width: 480px) {
-    .container {
+    .screen-placeholder {
         width: 100%;
-        padding: 0 10px;
-
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-        /* Reduced from 2.2rem */
-    }
-
-    .hero-content p {
-        font-size: 0.9rem;
-        /* Reduced from 1rem */
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-        /* Reduced from 2rem */
-    }
-
-    /* Adjust Gallery for small screens: 2-Column Grid ("2 en 2") */
-    .gallery-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 2fr) !important;
-        gap: 15px !important;
-        overflow-x: visible;
-        scroll-snap-type: none;
-        padding: 0;
+        height: 100%;
+        background: linear-gradient(135deg, #1E1E1E 0%, #121212 100%);
+        display: flex;
+        align-items: center;
         justify-content: center;
+        color: var(--text-gray);
+        font-size: 1.2rem;
+        border: 1px dashed rgba(255, 255, 255, 0.1);
     }
 
-    .gallery-grid::-webkit-scrollbar {
-        display: none;
+    .screen-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .phone-placeholder {
-        width: 100% !important;
-        min-width: auto;
-        max-width: none;
-        margin: 0;
-        scroll-snap-align: none;
-        height: auto;
-        /* Allow height to scale */
-        aspect-ratio: 9/19;
-        /* Maintain phone shape */
+    /* Premium Section */
+    .premium-promo {
+        padding: 80px 5%;
+        background: linear-gradient(90deg, #121212 0%, #2a2200 50%, #121212 100%);
+        text-align: center;
+        border-top: 1px solid rgba(255, 215, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
     }
 
-
-    /* Portrait: Optimize vertical rhythm */
-    @media (orientation: portrait) {
-        .hero {
-            padding-top: 100px;
-            /* Reduced from 120px */
-            padding-bottom: 40px;
-            min-height: auto;
-        }
-
-        .cheese-drip {
-            height: 120px;
-            /* Reduced from 150px */
-        }
-
-        .phone-mockup {
-            width: 180px;
-            /* Reduced further from 220px */
-            height: 360px;
-            /* Reduced further from 440px */
-        }
-
-        .feature-item {
-            gap: 20px;
-            margin-bottom: 40px;
-        }
+    .premium-content h2 {
+        color: var(--primary);
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
     }
 
-    /* Landscape: Optimize vertical space */
-    @media (orientation: landscape) {
-        .hero {
-            padding-top: 80px;
-            padding-bottom: 20px;
+    .premium-content p {
+        color: white;
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+
+    /* --- Responsive Styles (Requested Dimensions) --- */
+
+    /* Moviles Pequeños (0 - 480px) */
+    @media (max-width: 480px) {
+        .container {
+            width: 100%;
+            padding: 0 10px;
+
         }
 
         .hero-content h1 {
-            margin-bottom: 0.5rem;
-        }
-
-        .phone-mockup {
-            display: none;
-            /* Hide huge mockup in short landscape views to save space */
-        }
-
-        .cheese-drip {
-            height: 80px;
-            /* Reduced from 100px */
-        }
-
-        .navbar {
-            height: 50px;
-            /* Even smaller navbar */
-        }
-    }
-}
-
-/* Moviles Medianos (481px - 600px) */
-@media (min-width: 481px) and (max-width: 600px) {
-    .hero-content h1 {
-        font-size: 2.8rem;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 2fr) !important;
-        gap: 10px !important;
-    }
-
-    /* Portrait */
-    @media (orientation: portrait) {
-        .hero {
-            padding-top: 140px;
-        }
-
-        .phone-mockup {
-            width: 280px;
-            height: 560px;
-        }
-    }
-
-    /* Landscape */
-    @media (orientation: landscape) {
-        .hero {
-            flex-direction: row;
-            text-align: left;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 100px;
-        }
-
-        .hero-content {
-            margin-top: 0;
-            max-width: 50%;
-        }
-
-        .hero-visual {
-            justify-content: flex-end;
-            padding-right: 20px;
-        }
-
-        .phone-mockup {
-            width: 200px;
-            height: 400px;
-            margin: 0;
-        }
-    }
-}
-
-/* Moviles Grandes (601px - 900px) */
-@media (min-width: 601px) and (max-width: 900px) {
-    .hero-content h1 {
-        font-size: 3.5rem;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, min-content) !important;
-    }
-
-    .phone-placeholder {
-        width: 280px !important;
-        margin: 0 auto !important;
-    }
-
-    /* Portrait: Tablets/Large Phones */
-    @media (orientation: portrait) {
-        .hero-content {
-            padding: 0 5%;
-        }
-
-        .steps-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    /* Landscape */
-    @media (orientation: landscape) {
-        .hero {
-            flex-direction: row;
-            text-align: left;
-            align-items: flex-start;
-            /* Align top */
-            padding-top: 120px;
-        }
-
-        .hero-content {
-            max-width: 55%;
-            margin-top: 0;
-            text-align: left;
+            font-size: 1.8rem;
+            /* Reduced from 2.2rem */
         }
 
         .hero-content p {
-            margin-left: 0;
+            font-size: 0.9rem;
+            /* Reduced from 1rem */
         }
 
-        .download-badges {
-            justify-content: flex-start;
+        .section-title {
+            font-size: 1.8rem;
+            /* Reduced from 2rem */
         }
 
-        .hero-visual {
-            max-width: 45%;
+        /* Carousel handles mobile layout */
+        /* Portrait: Optimize vertical rhythm */
+        @media (orientation: portrait) {
+            .hero {
+                padding-top: 100px;
+                /* Reduced from 120px */
+                padding-bottom: 40px;
+                min-height: auto;
+            }
+
+            .cheese-drip {
+                height: 120px;
+                /* Reduced from 150px */
+            }
+
+            .phone-mockup {
+                width: 180px;
+                /* Reduced further from 220px */
+                height: 360px;
+                /* Reduced further from 440px */
+            }
+
+            .feature-item {
+                gap: 20px;
+                margin-bottom: 40px;
+            }
         }
 
-        .phone-mockup {
-            width: 240px;
-            /* Smaller mockup to fit landscape height */
-            height: 480px;
+        /* Landscape: Optimize vertical space */
+        @media (orientation: landscape) {
+            .hero {
+                padding-top: 80px;
+                padding-bottom: 20px;
+            }
+
+            .hero-content h1 {
+                margin-bottom: 0.5rem;
+            }
+
+            .phone-mockup {
+                display: none;
+                /* Hide huge mockup in short landscape views to save space */
+            }
+
+            .cheese-drip {
+                height: 80px;
+                /* Reduced from 100px */
+            }
+
+            .navbar {
+                height: 50px;
+                /* Even smaller navbar */
+            }
         }
     }
-}
 
-/* Pantallas Grandes (Desktop XL) */
-@media (min-width: 1300px) {
-    .gallery-grid {
-        grid-template-columns: repeat(4, min-content) !important;
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
+    /* Moviles Medianos (481px - 600px) */
+    @media (min-width: 481px) and (max-width: 600px) {
+        .hero-content h1 {
+            font-size: 2.8rem;
+        }
+
+
+
+        /* Portrait */
+        @media (orientation: portrait) {
+            .hero {
+                padding-top: 140px;
+            }
+
+            .phone-mockup {
+                width: 280px;
+                height: 560px;
+            }
+        }
+
+        /* Landscape */
+        @media (orientation: landscape) {
+            .hero {
+                flex-direction: row;
+                text-align: left;
+                align-items: center;
+                justify-content: space-between;
+                padding-top: 100px;
+            }
+
+            .hero-content {
+                margin-top: 0;
+                max-width: 50%;
+            }
+
+            .hero-visual {
+                justify-content: flex-end;
+                padding-right: 20px;
+            }
+
+            .phone-mockup {
+                width: 200px;
+                height: 400px;
+                margin: 0;
+            }
+        }
+    }
+
+    /* Moviles Grandes (601px - 900px) */
+    @media (min-width: 601px) and (max-width: 900px) {
+        .hero-content h1 {
+            font-size: 3.5rem;
+        }
+
+        .gallery-grid {
+            grid-template-columns: repeat(2, min-content) !important;
+        }
+
+        /* Portrait: Tablets/Large Phones */
+        @media (orientation: portrait) {
+            .hero-content {
+                padding: 0 5%;
+            }
+
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Landscape */
+        @media (orientation: landscape) {
+            .hero {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+                /* Align top */
+                padding-top: 120px;
+            }
+
+            .hero-content {
+                max-width: 55%;
+                margin-top: 0;
+                text-align: left;
+            }
+
+            .hero-content p {
+                margin-left: 0;
+            }
+
+            .download-badges {
+                justify-content: flex-start;
+            }
+
+            .hero-visual {
+                max-width: 45%;
+            }
+
+            .phone-mockup {
+                width: 240px;
+                /* Smaller mockup to fit landscape height */
+                height: 480px;
+            }
+        }
+    }
+
+    /* Pantallas Grandes (Desktop XL) */
+    @media (min-width: 1300px) {
+        .gallery-grid {
+            grid-template-columns: repeat(4, min-content) !important;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    /* Carousel Buttons */
+    /* Carousel Buttons */
+    .carousel-btn {
+        position: static;
+        transform: none;
+        background: rgba(128, 128, 128, 0.4);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.3s, transform 0.2s;
+        font-family: monospace;
+        flex-shrink: 0;
+        padding: 0;
+        line-height: 1;
+    }
+
+    .carousel-btn:hover {
+        background: rgba(128, 128, 128, 0.8);
+        transform: scale(1.1);
     }
 }
